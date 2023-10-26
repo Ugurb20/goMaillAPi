@@ -6,7 +6,7 @@ import (
 	gomail "gopkg.in/gomail.v2"
 )
 
-///ldvv moar jqnu yhkd
+
 
 type Contact struct {
 	Email   string `json:"email"`
@@ -23,7 +23,7 @@ func SendMail(contact Contact) (string,error){
     msg.SetHeader("Subject", "New Lead")
     msg.SetBody("text/html", fmt.Sprintf("<b><p>Email: %s</p><p>Firstname: %s</p><p>Company Name: %s</p></b>",contact.Email, contact.FirstName, contact.CompanyName))
 
-    n := gomail.NewDialer("smtp.gmail.com", 587, "ugurbukcuoglu@gmail.com", "zdtklxazocobooso")
+    n := gomail.NewDialer("smtp.gmail.com", 587, "ugurbukcuoglu@gmail.com", "pass")
 
     // Send the email
     if err := n.DialAndSend(msg); err != nil {
